@@ -32,12 +32,6 @@ def main(argv):
 			thread = arg
 	
 	
-# modelname, inputpath, outputpath(folder)
-# add imageheight, imagewidth, epochs
-# how ASDEC generates images,  python script randomly generate the images
-# recognized by 
-# 
-# call ASDEC with input (training) commond, copy the images to another folder, call my script
 	
 	
 	if (mod == "train"):
