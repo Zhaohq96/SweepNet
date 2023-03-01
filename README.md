@@ -1,2 +1,2 @@
 # SweepNet: a lightweight CNN architecture for the classification of adaptive genomic regions
-Source code of SweepNet
+Author: Hanqing Zhao (zhaohq7514@gmail.com)
