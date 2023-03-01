@@ -46,18 +46,18 @@ def main(argv):
 		matrix = np.empty([int(height), int(width)], dtype=np.uint8)
 		
 		f=open(os.path.join(filepath, file))
-#		print (file)
+
 		
 		for lineindex, line in enumerate(f):
 			line = line.replace('\n', '')
-#			print(line)
+
 			
 			matrix[lineindex] = np.array(list(line), dtype=np.uint8)     # store the data into matrix
 			
-#		print (matrix)
+
 		matrix_RGB = np.empty([int(height), int(width), 3], dtype=np.uint8)
 		
-#		matrix = sort_min_diff(matrix)
+
 		
 		if mode == 'gray':
 			matrix = matrix * 127
@@ -65,10 +65,7 @@ def main(argv):
 			
 		elif mode == 'black':
 			matrix = 255 - matrix * 255
-#			for i in range(int(height)):
-#				for j in range(int(width)):
-#					print(matrix[i][j])
-#					matrix[i][j] = 255 - matrix[i][j] * 255
+
 			img = Image.fromarray(matrix)
 			
 		elif mode == 'RGB':
@@ -80,23 +77,21 @@ def main(argv):
 						matrix_RGB[i][j] = [255, 0, 0]
 					else:
 						matrix_RGB[i][j] = [0, 255, 0]
-#					print(matrix_RGB[i][j])
+
 			img = Image.fromarray(np.uint8(matrix_RGB))
 			
 		else:
 			print('EEROR: No available image format indicated')
 			sys.exit()
 			
-#		print(matrix)
+
 		
-		
-#		print(img)
 		
 		if form == 'png':
 			img.save(outdir + '/' + str(file.split('.')[0]) + '.png')
 			
 		elif form == 'pdf':
-#			cv2.imwrite(outdir + '/' + str(file.split('.')[0]) + '.pdf', matrix)
+
 			img.save(outdir + '/' + str(file.split('.')[0]) + '.jpeg', format='jpeg', bbox_inches='tight')
 			
 		else:
