@@ -23,22 +23,22 @@ do
 	esac
 done
 
-#$current_path/ms2txt -i $input_path/train/neutral.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/train/split_txt/neutral;
+$current_path/ms2txt -i $input_path/train/neutral.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/train/split_txt/neutral;
 
-#$current_path/ms2txt -i $input_path/train/selection.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/train/split_txt/selection;
+$current_path/ms2txt -i $input_path/train/selection.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/train/split_txt/selection;
 
-#python $current_path/win2img.py -i $output_path/train/split_txt/neutral -o $output_path/train/images/neutral -w $win_snp -h $height -f png -m "$color";
+python $current_path/win2img.py -i $output_path/train/split_txt/neutral -o $output_path/train/images/neutral -w $win_snp -h $height -f png -m "$color";
 
-#python $current_path/win2img.py -i $output_path/train/split_txt/selection -o $output_path/train/images/selection -w $win_snp -h $height -f png -m "$color";
+python $current_path/win2img.py -i $output_path/train/split_txt/selection -o $output_path/train/images/selection -w $win_snp -h $height -f png -m "$color";
 
-########
-#$current_path/ms2txt -i $input_path/test/neutral.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/test/split_txt/neutral;
+###########
+$current_path/ms2txt -i $input_path/test/neutral.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/test/split_txt/neutral;
 
-#$current_path/ms2txt -i $input_path/test/selection.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/test/split_txt/selection;
+$current_path/ms2txt -i $input_path/test/selection.ms -c "$center" -w $win_snp -s $win_site -l $length -r $min_snp -a $modeA -b $modeB -o $output_path/test/split_txt/selection;
 
-#python $current_path/win2img.py -i $output_path/test/split_txt/neutral -o $output_path/test/images/neutral -w $win_snp -h $height -f png -m "$color";
+python $current_path/win2img.py -i $output_path/test/split_txt/neutral -o $output_path/test/images/neutral -w $win_snp -h $height -f png -m "$color";
 
-#python $current_path/win2img.py -i $output_path/test/split_txt/selection -o $output_path/test/images/selection -w $win_snp -h $height -f png -m "$color";
+python $current_path/win2img.py -i $output_path/test/split_txt/selection -o $output_path/test/images/selection -w $win_snp -h $height -f png -m "$color";
 
 ###########
 python $current_path/NN.py -n train -m SweepNet -o $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/train/images -e 1 -t 8;
