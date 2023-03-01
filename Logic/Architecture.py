@@ -84,11 +84,7 @@ class Training:
         self.train_ds = self.train_ds.cache().shuffle(1000).\
             prefetch(buffer_size=AUTOTUNE)
         self.val_ds = self.val_ds.cache().prefetch(buffer_size=AUTOTUNE)
-#        for image_batch, labels_batch in self.train_ds:
-#            sizeImage = image_batch.shape
-#            print(sizeImage)
-#            print(labels_batch.shape)
-#            break
+
 
         start = time.time()
         tensorboard_callback = tf.keras.callbacks.TensorBoard(self.modelName + "/tensorBoard")
@@ -99,19 +95,12 @@ class Training:
         else:
             checkpoint = ModelCheckpoint(self.modelName + "/weights.best.hdf5", monitor='val_top_k_categorical_accuracy', verbose=1, save_best_only=True, mode='auto')
         callback_list = [checkpoint]
-        # call the model present in a different python file
-        # This step includes the compiling and fitting of the model design
+        
         self.useDevice = '/CPU:0'
         with tf.device(self.useDevice):
             self.model = self.model_Name
        
-#            self.history = self.model.fit(
-#                self.train_ds,
-#                validation_data=self.val_ds,
-#                verbose=1,
-#                epochs=self.epochs,
-#                callbacks=[tensorboard_callback]
- #               )
+
                
             self.history = self.model.fit(
                 self.train_ds,
@@ -123,20 +112,14 @@ class Training:
         end = time.time()
         self.exe_time = end-start
 		        
-        # give a summary of the model in the terminal
+        
         self.model.summary()
         
-        # save the model
-#        self.model.save(self.modelName)
+
         print("Model is saved")
         
         self.__summary()
-    # endregion
-
-    ########################################################################
-    # private methods
-    ########################################################################
-    # region
+  
     def __setDataTrain(self):
     
         self.train_ds = tf.keras.preprocessing.image_dataset_from_directory(
@@ -162,7 +145,7 @@ class Training:
             batch_size=self.batch_size)
     
     def __summary(self):
-        # evaluation data of the trained model
+        
         if self.modelN == 'inception_net':
             acc = self.history.history['dense_2_accuracy']
             val_acc = self.history.history['val_dense_2_accuracy']
@@ -174,7 +157,7 @@ class Training:
             loss = self.history.history['loss']
             val_loss = self.history.history['val_loss']
         epochs_range = range(self.epochs)
-        # save data into the model folder
+        
         np.savetxt(self.modelName + "/TrainResultsAcc.txt",
                    np.column_stack((epochs_range, acc, val_acc))[:, :],
                    fmt="%s")
@@ -185,27 +168,19 @@ class Training:
             with redirect_stdout(f):
                 print("The execution time of training is: " + str(self.exe_time))
                 
-        # save the model summary and the amount of data used to
-        # create the model
+        
         with open((self.modelName + "/TrainResultsModel.txt"), 'w') as f:
             with redirect_stdout(f):
                 print("amount of files used")
                 print("validation split is set to 0.2\n")
                 for i in range(2):
                     DIR = self.directory + str(i)
-#                    amount = str(len([name for name in os.listdir(DIR) if
-#                                      os.path.isfile(os.path.join(DIR, name))
-#                                      ]))
-#                    print("class " + str(i))
-#                    print("amount " + amount)
+
                 print("\nmodel summary\n")
                 self.model.summary()
 
 class Load:
-    ########################################################################
-    # class constructor
-    ########################################################################
-    # region
+    
     def __init__(self, modelName, directory, image_height, image_width, outDirectory, threads):
         self.modelName = modelName
         self.directory = directory
@@ -215,12 +190,7 @@ class Load:
         self.loadedModel = keras.models.load_model(self.modelName + "/weights.best.hdf5")
         self.outDirectory = outDirectory
         self.resultsData = np.empty((0, 4), float)
-    # endregion
-
-    ########################################################################
-    # public methods
-    ########################################################################
-    # region
+    
     def imageSingle(self, imageName):
         self.resultsData = np.empty((0, 4), float)
         self.__performPrediction(self.directory + '/' + imageName)
@@ -248,12 +218,6 @@ class Load:
         np.savetxt(self.outDirectory + '/PredResults.txt', self.resultsData[:][:], fmt="%s")
          
 
-    # endregion
-
-    ########################################################################
-    # private methods
-    ########################################################################
-    # region
     def __performPrediction(self, imageName):
         img = tf.keras.preprocessing.image.load_img(
             self.directory + '/' + imageName,
@@ -269,7 +233,7 @@ class Load:
         self.useDevice = '/CPU:0'
         with tf.device(self.useDevice):
             predictions = self.loadedModel.predict(img_array)
-#            print(predictions)
+
         if 'inception_net' in self.modelName:
             score = predictions[0][0]
         else:
@@ -277,16 +241,12 @@ class Load:
         scoreNeutral = score[0]
         scoreSelected = score[1]
 
-#        scoreRecombination = score[2]
         score_copy = score.tolist()
         classname = score_copy.index(max(score_copy))
-#        window = imageName.rfind(".txt")
-#        midPos = imageName.rfind("win_")
-#        midPos2 = imageName.rfind(".txt")
+
         endPos = imageName.rfind(".png")
         window = str(imageName[:])
-#        lastSNP = float(imageName[midPos2 + len(".w_end_"):endPos])
-#        middleSNP = (firstSNP + lastSNP) / 2
+
         self.resultsData = np.append(self.resultsData,
                                      np.array([[str(window),
                                      		  int(classname),
