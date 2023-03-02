@@ -42,6 +42,6 @@ The already-generated datasets used in the paper can be downloaded via https://f
 ## A quick example
 In order to run a quick example successfully, we recommend to put the already-generated datasets under the folder _SweepNet-main_. The following command can be used to run a quick example.
 
-``sh TrainTest.sh -m SweepNet -c bp -i DATASETS/D1 -o Example-results -h 128 -n 128 -s 5000 -l 100000 -r 5 -t black``
+``sh TrainTest.sh -m SweepNet -c bp -i DATASETS/D1 -o Example-results -h 128 -n 128 -s 5000 -l 100000 -r 5 -e 10 -t black``
 
 The tranining model and testing will be stored in the folder _Example-results_.
