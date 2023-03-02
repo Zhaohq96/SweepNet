@@ -22,4 +22,15 @@ To activate virtual environment:
 
 ``conda activate myenv``
 
+To deactivate virtual environment:
+
+``conda deactivate``
+
 ## Download
+The following commands can be used to download the source code.
+
+
+$ wget https://github.com/alachins/raisd/archive/master.zip
+$ unzip master.zip
+$ cd raisd-master
+$ ./install-RAiSD.sh
