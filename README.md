@@ -33,8 +33,13 @@ The zip file of the source code can be downloaded via github. Then the following
 
 ``cd SweepNet-main``
 
-The already generated datasets used in the paper can be downloaded via https://figshare.com/articles/dataset/Datasets_used_in_SweepNet/22194118
+The already generated datasets used in the paper can be downloaded via https://figshare.com/articles/dataset/Datasets_used_in_SweepNet/22194118 and then the following command can be used to unzip the file.
+
+``unzip DATASETS.zip``
+
+
+
 ## A quick example
-The following command can be used to run a quick example.
+In order to . The following command can be used to run a quick example.
 
 ``sh TrainTest.sh -m SweepNet -c bp -i Example-datasets -o Example-results -h 50 -n 50 -s 5000 -l 100000 -r 5 -t black``
