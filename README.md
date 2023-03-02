@@ -26,20 +26,22 @@ To deactivate virtual environment:
 
 ``conda deactivate``
 
-## Source code and datasets download
+## Source code and already-generated datasets download
 The zip file of the source code can be downloaded via github. Then the following command can be used to unzip the file and to be in the path of main folder.
 
 ``unzip SweepNet-main.zip``
 
 ``cd SweepNet-main``
 
-The already generated datasets used in the paper can be downloaded via https://figshare.com/articles/dataset/Datasets_used_in_SweepNet/22194118 and then the following command can be used to unzip the file.
+The already-generated datasets used in the paper can be downloaded via https://figshare.com/articles/dataset/Datasets_used_in_SweepNet/22194118 and then the following command can be used to unzip the file.
 
 ``unzip DATASETS.zip``
 
 
 
 ## A quick example
-In order to . The following command can be used to run a quick example.
+In order to run a quick example successfully, we recommend to put the already-generated datasets under the path ##SweepNet-main. The following command can be used to run a quick example.
 
-``sh TrainTest.sh -m SweepNet -c bp -i Example-datasets -o Example-results -h 50 -n 50 -s 5000 -l 100000 -r 5 -t black``
+``sh TrainTest.sh -m SweepNet -c bp -i DATASETS/D1 -o Example-results -h 50 -n 50 -s 5000 -l 100000 -r 5 -t black``
+
+The tranining model and testing 
