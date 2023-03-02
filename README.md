@@ -44,4 +44,4 @@ In order to run a quick example successfully, we recommend to put the already-ge
 
 ``sh TrainTest.sh -m SweepNet -c bp -i DATASETS/D1 -o Example-results -h 50 -n 50 -s 5000 -l 100000 -r 5 -t black``
 
-The tranining model and testing 
+The tranining model and testing will be stored in the folder ##Example-results.
