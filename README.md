@@ -30,6 +30,7 @@ To deactivate virtual environment:
 The zip file of the source code can be downloaded via github. Then the following command can be used to unzip the file and to be in the path of main folder.
 
 ``unzip SweepNet-main.zip
+
 cd SweepNet-main``
 
 
