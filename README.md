@@ -14,10 +14,10 @@ SweepNet uses Keras, a high-level API which using TensorFlow as its backend, to 
 
 To build virtual environment by command:
 
-'conda create -n myenv python=3.8 protobuf tensorflow=2.8 keras=2.8 numpy h5py matplotlib=3.4.1 tensorboard=2.8 pillow=7.0.0'
+> conda create -n myenv python=3.8 protobuf tensorflow=2.8 keras=2.8 numpy h5py matplotlib=3.4.1 tensorboard=2.8 pillow=7.0.0
 
 "myenv" as the name of virtual environment, can be changed.
 
 To activate virtual environment:
 
-'conda activate myenv'
+> conda activate myenv
