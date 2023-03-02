@@ -36,4 +36,4 @@ The zip file of the source code can be downloaded via github. Then the following
 ## A quick example
 The following command can be used to run a quick example.
 
-``sh TrainTest.sh -d "$d" -m SweepNet -c bp -i Example-datasets -o Example-results -h 50 -n 50 -s 5000 -l 100000 -r 5 -t black``
+``sh TrainTest.sh -m SweepNet -c bp -i Example-datasets -o Example-results -h 50 -n 50 -s 5000 -l 100000 -r 5 -t black``
