@@ -10,7 +10,7 @@ Version: 1.0
 SweepNet has 5 layers and an extra SE block. Before feeding images to SweepNet, a data pre-processing method is employed to further improve classification ability of the CNN.
 
 ## Environmental setup
-SweepNet uses Keras, a high-level API which using TensorFlow as its backend, to build the network. To avoid package dependencies, I recommend to use Anaconda to build virtual environment. The installation of Anaconda can be found via https://www.anaconda.com/
+SweepNet uses Keras, a high-level API which using TensorFlow as its backend, to build the network. To avoid package dependencies, we recommend to use Anaconda to build virtual environment. The installation of Anaconda can be found via https://www.anaconda.com/
 
 To build virtual environment by command:
 
