@@ -33,6 +33,7 @@ The zip file of the source code can be downloaded via github. Then the following
 
 ``cd SweepNet-main``
 
+The already generated datasets used in the paper can be downloaded via https://figshare.com/articles/dataset/Datasets_used_in_SweepNet/22194118
 ## A quick example
 The following command can be used to run a quick example.
 
