@@ -27,10 +27,6 @@ To deactivate virtual environment:
 ``conda deactivate``
 
 ## Download
-The following commands can be used to download the source code.
+The zip file of the source code can be downloaded via 
 
 
-$ wget https://github.com/alachins/raisd/archive/master.zip
-$ unzip master.zip
-$ cd raisd-master
-$ ./install-RAiSD.sh
