@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-current_path=/home/david/project/
+current_path=/home/david/project
 
 modeA = 4
 modeB = 6
