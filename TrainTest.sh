@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-current_path=/home/david/project/12ReorderStrategies
+current_path=/home/david/project/
 
 while getopts "d:a:b:m:c:i:o:h:n:s:l:r:t:g:e:" opt
 do
