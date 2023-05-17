@@ -3,6 +3,9 @@
 
 current_path=/home/david/project/
 
+modeA = 4
+modeB = 6
+
 while getopts "d:a:b:m:c:i:o:h:n:s:l:r:t:g:e:" opt
 do
 	case "${opt}" in
