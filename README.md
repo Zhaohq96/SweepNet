@@ -121,4 +121,16 @@ For _NN.py_, the following command can be used.
 
 The generated message is the following.
 
+```
+This script can be executed for converting the .txt files of the binary matrices into images.
+
+The: -i, -h, -w, -o, -f, -m flags are required
+	-d: path to an input folder containing the .txt files of the binary matrices (str)
+	-h: the height of the images (int)
+	-w: the width of the images (int)
+	-o: path to an output folder (str)
+	-f: the stored format (str), "pdf" or "png" (def: png)
+	-m: color mode (str), "black", "grey" or "RGB" (def: black)
+```
+
 
