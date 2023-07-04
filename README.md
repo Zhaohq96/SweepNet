@@ -2,7 +2,7 @@
 
 First release: 1/3/2023
 
-Last update: 17/5/2023
+Last update: 4/7/2023
 
 Version: 1.0
 
@@ -48,4 +48,28 @@ Then, the following command can be used to run a quick example.
 
 The tranining model and testing will be stored in the folder _Example-results_.
 
+The description of the supported flags of _TrainTest.sh_ can be provided by the following command.
+
+``sh TrainTest.sh -H``
+
+The quick-reference help message is the following.
+
+``This is a fast script for identifying selective sweep using SweepNet (a developed CNN).
+
+	-i: path to an input folder (str), the folder should be organized as:
+		Path_input
+		--train
+		----neutral.ms
+		----selection.ms
+		--test
+		----neutral.ms
+		----selection.ms
+	The sub-folders "train" and "test" both contain two files in ms format. "neutral.ms" and "selection.ms" are the ms files containing neutrality and selective sweep data respectively.
+	NOTE that the sub-folders and the ms files should be named and organized exactly same as the above structure.
+	-o: path to an output folder (str)
+	-h: height of images (int)
+	-n: width of images (int)``
+
+
 ## In-tool Help
+SweepNet consists of two seperate scripts. Each script output a quick-reference help message that provides a short description for each command-line flags
