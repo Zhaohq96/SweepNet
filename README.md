@@ -12,6 +12,7 @@ SweepNet has 5 layers and an extra SE block. Before feeding images to SweepNet, 
 The article describing SweepNet is published in _PASC2023 (Platform for Advanced Scientific Computing)_:
 
 1. SweepNet: A Lightweight CNN Architecture for the Classification of Adaptive Genomic Regions
+
    URL: https://dl.acm.org/doi/abs/10.1145/3592979.3593411
 
 ## Environmental Setup
