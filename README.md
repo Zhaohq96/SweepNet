@@ -9,7 +9,7 @@ Version: 1.0
 ## About
 SweepNet has 5 layers and an extra SE block. Before feeding images to SweepNet, a data pre-processing method is employed to further improve classification ability of the CNN.
 
-## Environmental setup
+## Environmental Setup
 SweepNet uses Keras, a high-level API which using TensorFlow as its backend, to build the network. To avoid package dependencies, we recommend to use Anaconda to build virtual environment. The installation of Anaconda can be found via https://www.anaconda.com/
 
 To build virtual environment by command:
@@ -26,7 +26,7 @@ To deactivate virtual environment:
 
 ``conda deactivate``
 
-## Source code and already-generated datasets download
+## Source Code and Already-generated Datasets Download
 The zip file of the source code can be downloaded via github. Then the following command can be used to unzip the file and to be in the path of main folder.
 
 ``unzip SweepNet-main.zip``
@@ -48,4 +48,4 @@ Then, the following command can be used to run a quick example.
 
 The tranining model and testing will be stored in the folder _Example-results_.
 
-## To be completed...
+## In-tool Help
