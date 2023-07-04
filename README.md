@@ -54,7 +54,8 @@ The description of the supported flags of _TrainTest.sh_ can be provided by the 
 
 The quick-reference help message is the following.
 
-``This is a fast script for identifying selective sweep using SweepNet (a developed CNN).
+``
+This is a fast script for identifying selective sweep using SweepNet (a developed CNN).
 
 	-i: path to an input folder (str), the folder should be organized as:
 		Path_input
@@ -68,7 +69,8 @@ The quick-reference help message is the following.
 	NOTE that the sub-folders and the ms files should be named and organized exactly same as the above structure.
 	-o: path to an output folder (str)
 	-h: height of images (int)
-	-n: width of images (int)``
+	-n: width of images (int)
+ ``
 
 
 ## In-tool Help
