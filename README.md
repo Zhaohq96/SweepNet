@@ -44,6 +44,9 @@ The already-generated datasets used in the paper can be downloaded via https://f
 ``unzip DATASETS.zip``
 
 
+## Compiling
+
+
 
 ## A quick example
 In order to run a quick example successfully, we recommend to put the already-generated datasets under the folder _SweepNet-main_. First, correct the _current_path_ in the .sh file _TrainTest.sh_.
