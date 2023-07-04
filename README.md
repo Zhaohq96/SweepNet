@@ -51,7 +51,7 @@ _ms2txt_ is an already-generated C program compiled under x86 architecture. For 
 
 
 ## A quick example
-In order to run a quick example successfully, we recommend to put the already-generated datasets under the folder _SweepNet-main_. First, correct the _current_path_ in the .sh file _TrainTest.sh_.
+In order to run a quick example successfully, we recommend to put the already-generated datasets under the folder _SweepNet-main_. First, the _current_path_ in the .sh file _TrainTest.sh_ should be corrected.
 
 Then, the following command can be used to run a quick example.
 
