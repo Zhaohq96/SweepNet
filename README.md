@@ -73,4 +73,52 @@ This is a fast script for identifying selective sweep using SweepNet (a develope
 
 
 ## In-tool Help
-SweepNet consists of two seperate scripts. Each script output a quick-reference help message that provides a short description for each command-line flags
+SweepNet consists of two seperate scripts. Each script output a quick-reference help message that provides a short description for each command-line flags.
+
+For _NN.py_, the following command can be used.
+
+``python NN.py --help``
+
+The generated message is the following.
+
+```
+This script can be executed for training a CNN model and using an existing CNN model to classify the unknown data.
+
+Required flag:
+	-n: mode (str), "train" or "predict"
+
+If -n is "train",
+the: -d, -h, -w, -e, -o, -t flags are required
+	-d: path to an input folder (str), the folder should be organized as:
+		Folder_main
+		--Folder_classA
+		----classA_image_1
+		----classA_image_2
+		----...
+		--Folder_classB
+		----classB_image_1
+		----classB_image_2
+		----...
+	-h: the height of the images (int)
+	-w: the width of the images (int)
+	-e: the number of training epochs (int) (def: 10)
+	-o: path to an output folder (str)
+	-t: the number of threads (int) (def: 8)
+
+If -n is "predict",
+the: -d, -h, -w, -m, -o, -t flags are required
+	-d: path to an input folder containing the unknown data to predict (str)
+	-h: the height of the images (int)
+	-w: the width of the images (int)
+	-m: path to the folder containing the training model (str), NOTE that it is the path of the folder and the training model should be a .hdf5 file named as "weights.best.hdf5"
+	-o: path to an output folder (str)
+	-t: the number of threads (int) (def: 8)
+```
+
+For _NN.py_, the following command can be used.
+
+``python win2img.py --help``
+
+The generated message is the following.
+
+
