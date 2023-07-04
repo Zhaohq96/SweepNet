@@ -78,6 +78,9 @@ This is a fast script for identifying selective sweep using SweepNet (a develope
 ``` 
 
 
+## Input File Formats
+The current SweepNet can process SNP data in Hudson's ms file format. As SweepNet consists of separate scripts, it can also process data in image file format separately by feeding images to _NN.py_.
+
 ## In-tool Help
 SweepNet consists of two separate scripts. Each script output a quick-reference help message that provides a short description for each command-line flags.
 
@@ -140,11 +143,5 @@ The: -i, -h, -w, -o, -f, -m flags are required
 ```
 
 
-## Input File Formats
-The current SweepNet can process SNP data in Hudson's ms file format. As SweepNet consists of separate scripts, it can also process data in image file format separately by feeding images to _NN.py_.
 
-
-
-
-## Output Files
 
