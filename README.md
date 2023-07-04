@@ -80,7 +80,7 @@ This is a fast script for identifying selective sweep using SweepNet (a develope
 	-o: path to an output folder (str)
 	-h: height of images (int)
 	-n: width of images (int)
-``` 
+```
 
 
 ## Input File Formats
