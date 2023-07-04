@@ -9,6 +9,8 @@ Version: 1.0
 ## About
 SweepNet has 5 layers and an extra SE block. Before feeding images to SweepNet, a data pre-processing method is employed to further improve classification ability of the CNN.
 
+The article describing SweepNet is published in PASC2023 ()
+
 ## Environmental Setup
 SweepNet uses Keras, a high-level API which using TensorFlow as its backend, to build the network. To avoid package dependencies, we recommend to use Anaconda to build virtual environment. The installation of Anaconda can be found via https://www.anaconda.com/
 
@@ -134,5 +136,11 @@ The: -i, -h, -w, -o, -f, -m flags are required
 ```
 
 
-## Input File Format
+## Input File Formats
 The current SweepNet can process SNP data in Hudson's ms file format. As SweepNet consists of separate scripts, it can also process data in image file format separately by feeding images to _NN.py_.
+
+
+
+
+## Output Files
+
