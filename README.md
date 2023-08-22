@@ -47,7 +47,7 @@ The already-generated datasets used in the paper can be downloaded via https://f
 ## Compiling
 _ms2txt_ is an already-generated C program compiled under x86 architecture. For users work on different architecture, the following command can be used to compile the C code _Extract.c_.
 
-``gcc Extract.c -o ms2txt -g3``
+``gcc Extract.c -o ms2txt -lm``
 
 
 ## A quick example
