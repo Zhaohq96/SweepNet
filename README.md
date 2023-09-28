@@ -88,6 +88,7 @@ The current SweepNet can process SNP data in Hudson's ms file format. As SweepNe
 
 ## Confusion Matrix Generation
 _con_mat.py_ is a python script to generate confusion matrix. It requires 4 input options, path to file of neutral result, path to file of selection result, output path and the name of the output figure in a sequential order:
+
 ``python con_mat.py neutral_path selection_path output_path output_name``
 
 ## In-tool Help
