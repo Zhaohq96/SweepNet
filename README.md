@@ -86,6 +86,10 @@ This is a fast script for identifying selective sweep using SweepNet (a develope
 ## Input File Formats
 The current SweepNet can process SNP data in Hudson's ms file format. As SweepNet consists of separate scripts, it can also process data in image file format separately by feeding images to _NN.py_.
 
+## Confusion Matrix Generation
+_con_mat.py_ is a python script to generate confusion matrix. It requires 4 input options, path to file of neutral result, path to file of selection result, output path and the name of the output figure in a sequential order:
+``python con_mat.py neutral_path selection_path output_path output_name``
+
 ## In-tool Help
 SweepNet consists of two separate scripts. Each script output a quick-reference help message that provides a short description for each command-line flags.
 
