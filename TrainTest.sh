@@ -37,7 +37,7 @@ min_snp=1
 color='grey'
 grid=1
 
-while getopts "d:a:b:m:c:i:o:h:n:s:l:r:t:g:H" opt
+while getopts "d:a:b:m:c:e:i:o:h:n:s:l:r:t:g:H" opt
 do
 	case "${opt}" in
 		d) data=${OPTARG};;
@@ -45,6 +45,7 @@ do
 		b) modeB=${OPTARG};;
 		m) nn=${OPTARG};;
 		c) center=${OPTARG};;
+  		e) epoch=${OPTARG};;
 		i) input_path=${OPTARG};;
 		o) output_path=${OPTARG};;
 		h) height=${OPTARG};;
@@ -76,7 +77,7 @@ python $current_path/win2img.py -i $output_path/test/split_txt/neutral -o $outpu
 python $current_path/win2img.py -i $output_path/test/split_txt/selection -o $output_path/test/images/selection -w $win_snp -h $height -f png -m "$color";
 
 ###########
-python $current_path/NN.py -n train -m SweepNet -o $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/train/images -e 1 -t 8;
+python $current_path/NN.py -n train -m SweepNet -o $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/train/images -e $epoch -t 8;
 
 python $current_path/NN.py -n predict -m $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/test/images/neutral -o $output_path/test/result/neutral;
 
