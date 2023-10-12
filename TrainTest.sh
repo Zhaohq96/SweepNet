@@ -27,8 +27,8 @@ helpprint()
 
 current_path=/home/david/project/12ReorderStrategies
 
-modeA=0
-modeB=0
+modeA=4
+modeB=6
 center='bp'
 nn='SweepNet'
 win_site=5000
