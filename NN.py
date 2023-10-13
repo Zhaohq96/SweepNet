@@ -46,7 +46,6 @@ def main(argv):
 	opts, ars = getopt.getopt(argv, "d:n:h:w:e:m:o:t:s:c:", ["directory=", "mode=", "height=", "width=", "epoch=", "model=", "outpath=", "threads=", "thread=", "hardware=", "help"])
     	
 	epoch = 10
-	threads = 8
 	hardware = "CPU"
 	model = "SweepNet"
     	
@@ -80,7 +79,7 @@ def main(argv):
 	
 	if (mod == "train"):
 		
-		trainModel = Architecture.Training(direct, int(float(height)), int(float(width)), int(epoch), model, out, int(threads), int(thread), hardware)
+		trainModel = Architecture.Training(direct, int(float(height)), int(float(width)), int(epoch), model, out, int(threads))
 		trainModel.traingModel()
 		
 		
@@ -92,7 +91,7 @@ def main(argv):
 			shutil.rmtree(out)
 			os.makedirs(out)
 		
-		loadModel = Architecture.Load(model, direct, height, width, out, int(threads), int(thread), hardware)
+		loadModel = Architecture.Load(model, direct, height, width, out, int(threads))
 		numberOfImages = loadModel.imageFolder()
 		loadModel.generateReport()
 		

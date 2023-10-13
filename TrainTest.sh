@@ -25,7 +25,7 @@ helpprint()
 	exit 1
 }
 
-current_path=/home/david/project/12ReorderStrategies
+current_path=/home/david/MLI/SweepNet-main
 
 modeA=4
 modeB=6
@@ -77,9 +77,9 @@ python $current_path/win2img.py -i $output_path/test/split_txt/neutral -o $outpu
 python $current_path/win2img.py -i $output_path/test/split_txt/selection -o $output_path/test/images/selection -w $win_snp -h $height -f png -m "$color";
 
 ###########
-python $current_path/NN.py -n train -m SweepNet -o $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/train/images -e $epoch -t 8;
+python $current_path/NN.py -n train -m SweepNet -o $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d $output_path/train/images -e $epoch -t 8 -s 8;
 
-python $current_path/NN.py -n predict -m $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/test/images/neutral -o $output_path/test/result/neutral;
+python $current_path/NN.py -n predict -m $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d $output_path/test/images/neutral -o $output_path/test/result/neutral -t 8 -s 8;
 
-python $current_path/NN.py -n predict -m $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d window/$((win_snp))/D$((data))/A$((modeA))_B$((modeB))/test/images/selection -o $output_path/test/result/selection;
+python $current_path/NN.py -n predict -m $output_path/train/Model_A$((modeA))_B$((modeB))_"$center"_w$((win_snp))h$((height)) -h $height -w $win_snp -d $output_path/test/images/selection -o $output_path/test/result/selection -t 8 -s 8;
 
